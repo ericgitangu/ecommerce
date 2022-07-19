@@ -9,15 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/core": "^7.18.9",
+    "@babel/preset-react": "^7.18.6",
+    "@sanity/cli": "^2.30.2",
     "@sanity/client": "^3.3.2",
     "@sanity/image-url": "^1.0.1",
     "@stripe/stripe-js": "^1.32.0",
+    "csstype": "^3.1.0",
+    "install-peerdeps": "^3.0.3",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.3.0",
     "react-icons": "^4.4.0",
-    "stripe": "^9.14.0"
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.3.0",
+    "stripe": "^9.14.0",
+    "typescript": "^4.7.4"
   },
   "devDependencies": {
     "eslint": "8.20.0",
