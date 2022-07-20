@@ -135,7 +135,9 @@ width: 100%;
   position: relative;
   height: 500px;
   line-height: 0.9; 
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
 
 }
 .hero-banner-container .beats-solo{

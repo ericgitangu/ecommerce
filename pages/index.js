@@ -1,38 +1,34 @@
-import React from 'react'
-import { HeroBanner, FooterBanner, Product } from '../ecommerce/components'
-import { client } from '../ecommerce/lib/client'
+import React from 'react';
 
-const Home = ({products, vendor}) => {
-  return (
-    <>
-      <HeroBanner herobanner={vendor} />
-      <div className="products-heading">
-        <h2>Chocolates from around the world</h2>
-        <p>Tickle your sweet tooth</p>
-      </div>
-      <div className='products-container'>
-         {products?.map((product) => (
-          <ui> {product.title} </ui>))}
-      </div>
-      <FooterBanner />
+import { client } from '../lib/client';
+import { Product, FooterBanner, HeroBanner } from '../components'
 
-    </>
-  )
-}
+const Home = ({ products, bannerData }) => (
+  <div>
+    <HeroBanner heroBanner={bannerData.length && bannerData[0]}  />
+    <div className="products-heading">
+      <h2>Best Seller Products</h2>
+      <p>Audio equipment to fit your lifestyle</p>
+    </div>
+
+    <div className="products-container">
+      {products?.map((product) => <Product key={product._id} product={product} />)}
+    </div>
+
+    <FooterBanner footerBanner={bannerData && bannerData[0]} />
+  </div>
+);
 
 export const getServerSideProps = async () => {
-  const pquery = '*[_type == "Product"]'
-  const products = await client.fetch(pquery)
+  const query = '*[_type == "product"]';
+  const products = await client.fetch(query);
 
-  const vquery = '*[_type == "Vendor"]'
-  const vendor = await client.fetch(vquery)
-
-  const cquery = '*[_type == "Category"]'
-  const category = await client.fetch(cquery)
+  const bannerQuery = '*[_type == "banner"]';
+  const bannerData = await client.fetch(bannerQuery);
 
   return {
-    props: {products, category,vendor}
+    props: { products, bannerData }
   }
 }
 
-export default Home
+export default Home;
