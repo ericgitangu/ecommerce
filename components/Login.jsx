@@ -53,7 +53,7 @@ const Login = () => {
             <div className='login-content'>
                 <SiThesoundsresource size={140}/>
                 <h4>Eric's Audio Shop</h4>
-                <button className = 'login-with-google-btn'
+                <button className = 'login-with-google-btn' style={{cursor:'pointer'}}
                     onClick={signIn}
                 >
                     Sign in with Google

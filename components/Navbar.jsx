@@ -26,7 +26,7 @@ const Navbar = () => {
       </p>
       <p className='logo'>Welcome, {usr.name}
         <Avatar style={{margin:'10px'}} name={usr.name} size="50" round={true}/>
-        <HiOutlineLogout style={{pointer:'cursor'}} onClick={handleLogout} size={30}/>
+        <HiOutlineLogout style={{cursor:'pointer'}} onClick={handleLogout} size={30}/>
         Logout
       </p>
       <button type="button" className="cart-icon" onClick={() => setShowCart(true)} >
