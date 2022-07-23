@@ -15,6 +15,7 @@
     "@sanity/client": "^3.3.2",
     "@sanity/image-url": "^1.0.1",
     "@stripe/stripe-js": "^1.32.0",
+    "axios": "^0.27.2",
     "canvas-confetti": "^1.5.1",
     "csstype": "^3.1.0",
     "firebase": "^9.9.0",
