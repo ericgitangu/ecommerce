@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
 import getStripe from '../lib/getStripe';
+import { handleMpesa } from '../lib/mpesa'
 
 const Cart = () => {
   const cartRef = useRef();
@@ -23,7 +24,7 @@ const Cart = () => {
       body: JSON.stringify(cartItems),
     });
 
-    if(response.statusCode === 500) return;
+    if(response.status === 500) return;
     
     const data = await response.json();
 
@@ -98,6 +99,9 @@ const Cart = () => {
               <h3>${totalPrice}</h3>
             </div>
             <div className="btn-container">
+            <button type="button" className="btn" onClick={handleMpesa(totalPrice)}>
+                Pay with MPESA
+              </button>
               <button type="button" className="btn" onClick={handleCheckout}>
                 Pay with Stripe
               </button>
