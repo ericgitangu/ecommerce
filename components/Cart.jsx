@@ -103,7 +103,7 @@ const Cart = () => {
                 Pay with MPESA
               </button>
               <button type="button" className="btn" onClick={handleCheckout}>
-                Pay with Stripe
+                Pay by Card
               </button>
             </div>
           </div>
