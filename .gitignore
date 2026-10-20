@@ -36,3 +36,8 @@ firebase.json
 .firebaserc
 .github
 .firebase
+# local env files (never commit)
+.env
+.env*.local
+ecommerce/.env
+ecommerce/.env*.local
